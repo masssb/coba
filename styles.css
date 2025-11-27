@@ -1,80 +1,101 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LPTQ Kabupaten Contoh</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+}
 
-<body>
+/* TOP BAR */
+.top-bar {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.top-bar .right span {
+  margin-left: 12px;
+}
+.top-bar .icons i {
+  margin-left: 10px;
+  cursor: pointer;
+}
 
-  <!-- BAR ATAS -->
-  <div class="top-bar">
-    <span>Selamat Datang di Website LPTQ Kabupaten Contoh</span>
-    <div class="right">
-      <span><i class="fa fa-phone"></i> (0000) 123456</span>
-      <span><i class="fa fa-envelope"></i> admin@lptqcontoh.go.id</span>
-      <span class="icons">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-      </span>
-    </div>
-  </div>
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 2px solid #e3e3e3;
+}
+header .logo {
+  height: 60px;
+}
+header nav {
+  margin-left: auto;
+}
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+header ul li a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1c3f60;
+}
+header ul li a:hover {
+  color: #098d53;
+}
 
-  <!-- HEADER + MENU -->
-  <header>
-    <img src="logo.png" class="logo" alt="Logo">
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Kecamatan</a></li>
-        <li><a href="#">Publikasi</a></li>
-        <li><a href="#">Program Kerja</a></li>
-        <li><a href="#">Database</a></li>
-        <li><a href="#">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+/* HERO */
+.hero {
+  background: linear-gradient(#0ea36fdd, #0ea36fad), url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  text-align: center;
+  color: white;
+}
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 18px;
+}
 
-  <!-- BANNER -->
-  <section class="hero">
-    <div class="text">
-      <h1>LPTQ KABUPATEN CONTOH</h1>
-      <p>Lembaga Pengembangan Tilawatil Qur'an Kabupaten Contoh</p>
-    </div>
-  </section>
+/* ICON MENU */
+.icon-menu {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  background: white;
+}
+.icon-menu .item {
+  margin: 0 25px;
+  text-align: center;
+}
+.icon-menu i {
+  font-size: 40px;
+  background: #0ea36f;
+  padding: 20px;
+  color: white;
+  border-radius: 50%;
+}
+.icon-menu p {
+  margin-top: 8px;
+  font-weight: bold;
+}
 
-  <!-- MENU IKON -->
-  <section class="icon-menu">
-    <div class="item">
-      <i class="fa fa-book"></i>
-      <p>e-MTQ</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-microphone"></i>
-      <p>Musabaqah Center</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-globe"></i>
-      <p>Maqqro Online</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-pen-fancy"></i>
-      <p>Galeri Kaligrafi</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-users"></i>
-      <p>Kafilah</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 LPTQ KABUPATEN CONTOH — All Rights Reserved.
-  </footer>
-
-</body>
-</html>
+/* FOOTER */
+footer {
+  background: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
