@@ -1,82 +1,243 @@
-<!DOCTYPE html>
+<!--
+  miftahulqulub_clone.html
+  REplikasi tampilan 1:1 (owner confirmed). File ini satu berkas HTML yang berisi CSS & JS inline
+  - Ganti semua teks, gambar, dan link sesuai situs Anda
+  - Letakkan aset (logo, foto) di folder /assets/img/ saat men-deploy
+  - Jika mau, saya bisa memecah jadi assets terpisah (style.css, script.js)
+-->
+
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LPTQ Kabupaten Contoh</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Miftahul Qulub - Pesantren</title>
+  <meta name="description" content="Pesantren Miftahul Qulub">
+  <style>
+    /* reset minimal */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5;color:#222;background:#fafafa}
+
+    /* layout */
+    .container{max-width:1180px;margin:0 auto;padding:20px}
+
+    header{background:linear-gradient(180deg,#0b5394,#073763);color:#fff}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .branding{display:flex;gap:14px;align-items:center}
+    .branding img{width:72px;height:72px;object-fit:cover;border-radius:8px}
+    .branding .title{font-size:20px;font-weight:700}
+    nav ul{display:flex;gap:18px;list-style:none}
+    nav a{color:#fff;text-decoration:none;font-weight:600}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;padding:36px 20px}
+    .hero .intro h1{font-size:36px;margin-bottom:12px}
+    .hero .intro p{color:#e6eefc}
+    .cta-row{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-primary{background:#ffdc00;color:#073763}
+    .btn-outline{border:2px solid rgba(255,255,255,0.18);color:#fff;background:transparent}
+
+    .quick-box{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(3,27,56,0.08)}
+    .quick-box h3{font-size:18px;margin-bottom:8px}
+    .stat-row{display:flex;gap:12px;flex-wrap:wrap}
+    .stat{flex:1;min-width:120px;background:#f7fbff;padding:12px;border-radius:10px;text-align:center}
+    .stat strong{display:block;font-size:20px;color:#073763}
+
+    /* sections */
+    section{padding:36px 0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(3,27,56,0.06)}
+    .card h4{margin-bottom:8px}
+    .news-list{display:grid;gap:12px}
+    .news-item{display:flex;gap:12px;align-items:center}
+    .news-item img{width:120px;height:72px;object-fit:cover;border-radius:8px}
+
+    footer{background:#071b2e;color:#cfe6ff;padding:28px 0}
+    .footer-grid{display:grid;grid-template-columns:1fr 240px;gap:20px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media (max-width:640px){
+      .cards{grid-template-columns:1fr}
+      .branding img{width:56px;height:56px}
+      .hero .intro h1{font-size:28px}
+    }
+
+    /* precise positioning helpers - for pixel-accurate tweaks */
+    .pos-abs{position:relative}
+    .badge{display:inline-block;background:#ff6b00;color:#fff;padding:6px 10px;border-radius:20px;font-weight:700}
+
+    /* utilities */
+    .muted{color:#6e7d8a}
+    .mt-12{margin-top:12px}
+    .mb-8{margin-bottom:8px}
+  </style>
 </head>
-
 <body>
-
-  <!-- BAR ATAS -->
-  <div class="top-bar">
-    <span>haiiii natasyaa</span>
-    <span>Selamat Datang di Website LPTQ Kabupaten sidoarjo</span>
-    <div class="right">
-      <span><i class="fa fa-phone"></i> (0000) 123456</span>
-      <span><i class="fa fa-envelope"></i> admin@lptqcontoh.go.id</span>
-      <span class="icons">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-      </span>
-    </div>
-  </div>
-
-  <!-- HEADER + MENU -->
   <header>
-    <img src="logo.png" class="logo" alt="Logo">
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Kecamatan</a></li>
-        <li><a href="#">Publikasi</a></li>
-        <li><a href="#">Program Kerja</a></li>
-        <li><a href="#">Database</a></li>
-        <li><a href="#">Kontak</a></li>
-      </ul>
-    </nav>
+    <div class="container topbar">
+      <div class="branding">
+        <img src="assets/img/logo.png" alt="logo pesantren">
+        <div>
+          <div class="title">Pondok Pesantren Miftahul Qulub</div>
+          <div class="muted">Membangun generasi berilmu dan beramal</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#programs">Program</a></li>
+          <li><a href="#news">Berita</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container hero">
+      <div class="intro">
+        <h1>Selamat Datang di Miftahul Qulub</h1>
+        <p>Kami berdedikasi mendidik generasi Muslim yang cerdas, berakhlaq, dan siap berkontribusi untuk masyarakat.</p>
+        <div class="cta-row">
+          <a href="#pendaftaran" class="btn btn-primary">Daftar Santri</a>
+          <a href="#about" class="btn btn-outline">Pelajari Lebih Lanjut</a>
+        </div>
+        <div class="mt-12 quick-box">
+          <h3>Info Singkat</h3>
+          <div class="stat-row mt-12">
+            <div class="stat"><strong>450+</strong><span class="muted">Santri</span></div>
+            <div class="stat"><strong>35</strong><span class="muted">Guru</span></div>
+            <div class="stat"><strong>12</strong><span class="muted">Program</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pos-abs">
+        <div class="quick-box">
+          <h3>Pengumuman</h3>
+          <p class="muted mb-8">Pendaftaran gelombang 1 dibuka sampai 30 Juni. Hubungi admin untuk informasi lebih lanjut.</p>
+          <a href="#contact" class="btn btn-primary" style="display:inline-block">Hubungi Kami</a>
+        </div>
+        <div style="height:18px"></div>
+        <div class="quick-box">
+          <h3>Galeri</h3>
+          <img src="assets/img/galeri-1.jpg" alt="galeri" style="width:100%;height:140px;object-fit:cover;border-radius:8px;margin-top:12px">
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- BANNER -->
-  <section class="hero">
-    <div class="text">
-      <h1>LPTQ KABUPATEN CONTOH</h1>
-      <p>Lembaga Pengembangan Tilawatil Qur'an Kabupaten Contoh</p>
-    </div>
-  </section>
+  <main class="container">
+    <section id="about">
+      <div style="display:flex;gap:20px;align-items:center">
+        <div style="flex:1">
+          <h2>Tentang Kami</h2>
+          <p class="muted mt-12">Pondok Pesantren Miftahul Qulub berdiri untuk menjadi pusat pendidikan agama dan umum, menggabungkan kurikulum pesantren klasik dengan metode pembelajaran modern.</p>
+          <ul class="mt-12 muted">
+            <li>Durasi pendidikan: Tahfiz & reguler</li>
+            <li>Fasilitas: Asrama, perpustakaan, laboratorium</li>
+            <li>Akreditasi: Terakreditasi</li>
+          </ul>
+        </div>
+        <div style="width:320px">
+          <img src="assets/img/about.jpg" alt="about" style="width:100%;height:220px;object-fit:cover;border-radius:10px">
+        </div>
+      </div>
+    </section>
 
-  <!-- MENU IKON -->
-  <section class="icon-menu">
-    <div class="item">
-      <i class="fa fa-book"></i>
-      <p>e-MTQ</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-microphone"></i>
-      <p>Musabaqah Center</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-globe"></i>
-      <p>Maqqro Online</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-pen-fancy"></i>
-      <p>Galeri Kaligrafi</p>
-    </div>
-    <div class="item">
-      <i class="fa fa-users"></i>
-      <p>Kafilah</p>
-    </div>
-  </section>
+    <section id="programs">
+      <h2>Program Unggulan</h2>
+      <div class="cards mt-12">
+        <div class="card">
+          <h4>Pengajian Al-Qur'an</h4>
+          <p class="muted">Program intensif tahfiz dan tajwid untuk semua jenjang usia.</p>
+        </div>
+        <div class="card">
+          <h4>Pendidikan Formal</h4>
+          <p class="muted">Madrasah terpadu menggabungkan mata pelajaran umum dan agama.</p>
+        </div>
+        <div class="card">
+          <h4>Kegiatan Ekstrakurikuler</h4>
+          <p class="muted">Olahraga, kepemimpinan, dan kegiatan sosial.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>Berita & Pengumuman</h2>
+      <div class="news-list mt-12">
+        <article class="news-item card">
+          <img src="assets/img/news-1.jpg" alt="news">
+          <div>
+            <h4>Penutupan Kegiatan Tahfiz</h4>
+            <p class="muted">Acara penutupan kelas tahfiz dilaksanakan pada 10 Desember, diikuti oleh seluruh santri.</p>
+          </div>
+        </article>
+        <article class="news-item card">
+          <img src="assets/img/news-2.jpg" alt="news">
+          <div>
+            <h4>Penerimaan Santri Baru</h4>
+            <p class="muted">Penerimaan gelombang berikutnya dimulai bulan depan. Persyaratan dan tata cara pendaftaran dapat dilihat di halaman pendaftaran.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Kontak</h2>
+      <div style="display:flex;gap:20px;margin-top:12px">
+        <div style="flex:1" class="card">
+          <h4>Alamat</h4>
+          <p class="muted">Jl. Contoh No.1, Kabupaten, Provinsi</p>
+          <h4 class="mt-12">Telepon</h4>
+          <p class="muted">(021) 1234 5678</p>
+          <h4 class="mt-12">Email</h4>
+          <p class="muted">info@miftahulqulub.ponpes.id</p>
+        </div>
+        <div style="width:420px" class="card">
+          <h4>Form Kontak</h4>
+          <form id="contactForm">
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input type="text" name="name" placeholder="Nama" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e3eef9">
+              <input type="email" name="email" placeholder="Email" style="width:180px;padding:10px;border-radius:8px;border:1px solid #e3eef9">
+            </div>
+            <textarea name="message" placeholder="Pesan" style="width:100%;min-height:100px;padding:10px;border-radius:8px;border:1px solid #e3eef9"></textarea>
+            <div style="margin-top:12px;text-align:right">
+              <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2025 LPTQ KABUPATEN CONTOH — All Rights Reserved.
+    <div class="container footer-grid">
+      <div>
+        <h3>Miftahul Qulub</h3>
+        <p class="muted">© <span id="year"></span> Pondok Pesantren Miftahul Qulub. Semua hak cipta dilindungi.</p>
+      </div>
+      <div>
+        <h4>Ikuti Kami</h4>
+        <p class="muted">[icon] Instagram • Facebook • YouTube</p>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    // small scripts: update year + form handler
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Terima kasih. Pesan Anda telah dikirim (demo). Ganti handler JS untuk terhubung server).');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
-
